@@ -1,0 +1,12 @@
+# Git básicos
+alias gs="git status"
+alias ga="git add"
+alias gaa="git add ."
+alias gc="git commit"
+alias gcm="git commit -m"
+alias gp="git push"
+alias gpl="git pull"
+alias gb="git branch"
+alias gco="git checkout"
+alias gl="git log --oneline --graph --decorate"
+alias gd="git diff"
