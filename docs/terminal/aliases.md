@@ -1,12 +1,19 @@
-# Alias
+# 🔤 Alias
 
-Los alias permiten ejecutar comandos largos utilizando nombres cortos.
+Los alias permiten ejecutar comandos largos utilizando nombres cortos, mejorando la productividad en la terminal.
+
+## 📋 Tabla de Contenidos
+
+- [Git](#git)
+- [Herramientas](#herramientas)
+- [Sistema](#sistema)
+- [Configuración](#configuración)
 
 ---
 
-## Git
+## 🌿 Git
 
-### gs
+### gs - Git Status
 
 ```bash
 gs
@@ -18,9 +25,11 @@ Equivale a:
 git status
 ```
 
+Muestra el estado de los archivos en el repositorio.
+
 ---
 
-### ga
+### ga - Git Add
 
 ```bash
 ga
@@ -32,9 +41,17 @@ Equivale a:
 git add
 ```
 
+Añade archivos al área de staging.
+
+**Uso común:**
+```bash
+ga .           # Añadir todos los archivos
+ga archivo.txt # Añadir archivo específico
+```
+
 ---
 
-### gc
+### gc - Git Commit
 
 ```bash
 gc
@@ -46,9 +63,16 @@ Equivale a:
 git commit
 ```
 
+Crea un nuevo commit con los cambios staged.
+
+**Uso común:**
+```bash
+gc -m "mensaje" # Commit con mensaje
+```
+
 ---
 
-### gp
+### gp - Git Push
 
 ```bash
 gp
@@ -60,9 +84,11 @@ Equivale a:
 git push
 ```
 
+Envía los commits al repositorio remoto.
+
 ---
 
-### gl
+### gl - Git Pull
 
 ```bash
 gl
@@ -74,36 +100,42 @@ Equivale a:
 git pull
 ```
 
+Actualiza el repositorio local con los cambios remotos.
+
 ---
 
-## Herramientas
+## 🛠️ Herramientas
 
-### lg
+### lg - LazyGit
 
 ```bash
 lg
 ```
 
-Abre LazyGit.
+Abre LazyGit, una interfaz de Git para la terminal.
+
+**Para más información:** [`tools.md`](tools.md#lazygit)
 
 ---
 
-### yz
+### yz - Yazi
 
 ```bash
 yz
 ```
 
-Abre Yazi.
+Abre Yazi, un administrador de archivos moderno para la terminal.
+
+**Para más información:** [`tools.md`](tools.md#yazi)
 
 ---
 
-## Alias del sistema
+## 💻 Sistema
 
-### cat
+### cat - Bat (Cat mejorado)
 
 ```bash
-cat
+cat archivo.txt
 ```
 
 Utiliza internamente:
@@ -112,8 +144,47 @@ Utiliza internamente:
 batcat
 ```
 
-para mostrar archivos con resaltado de sintaxis.
+Muestra archivos con resaltado de sintaxis, numeración de líneas y más.
+
+**Ventajas sobre `cat` original:**
+- Resaltado de sintaxis
+- Numeración de líneas
+- Integración con Git
+- Paginación automática
 
 ---
 
+## ⚙️ Configuración
+
+Los alias se configuran en el archivo `~/.zshrc`.
+
+**Ejemplo de configuración:**
+```bash
+# Git aliases
+alias gs='git status'
+alias ga='git add'
+alias gc='git commit'
+alias gp='git push'
+alias gl='git pull'
+
+# Herramientas
+alias lg='lazygit'
+alias yz='yazi'
+
+# Sistema
+alias cat='batcat'
+```
+
+Para aplicar cambios después de modificar `~/.zshrc`:
+
+```bash
+source ~/.zshrc
+```
+
+---
+
+## 📝 Notas
+
 Este documento debe actualizarse cada vez que se cree un nuevo alias.
+
+**Volver al [Índice](../index.md)**

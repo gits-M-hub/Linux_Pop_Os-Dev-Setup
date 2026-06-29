@@ -12,53 +12,74 @@ Un entorno de desarrollo reproducible, organizado y documentado para **Pop!_OS**
 - 🤖 Herramientas de IA
 - 🐧 Linux
 
+## 📋 Tabla de Contenidos
+
+- [Objetivos](#objetivos)
+- [Estructura](#estructura)
+- [Documentación](#documentación)
+- [Herramientas Instaladas](#herramientas-instaladas)
+- [Scripts](#scripts)
+- [Filosofía](#filosofía)
+- [Licencia](#licencia)
+- [Contribuir](#contribuir)
+
 ---
 
-# Objetivos
+## 🎯 Objetivos
 
 Este repositorio tiene como finalidad:
 
-- Documentar completamente mi entorno de desarrollo.
-- Poder reconstruir mi computadora desde cero.
-- Aprender Linux de forma práctica.
-- Centralizar configuraciones, scripts y documentación.
-- Versionar todos los cambios importantes.
+- **Documentar completamente** mi entorno de desarrollo
+- **Poder reconstruir** mi computadora desde cero
+- **Aprender Linux** de forma práctica
+- **Centralizar** configuraciones, scripts y documentación
+- **Versionar** todos los cambios importantes
+
+Este proyecto está diseñado para ser un **setup reproducible** que permite reinstalar el entorno de desarrollo en Pop!_OS rápidamente cuando sea necesario.
 
 ---
 
-# Estructura
+## 📁 Estructura
 
 ```
-Linux_Pop_Os-Dev-Setup/
-
-configs/
-docs/
-scripts/
-prompts/
-
-README.md
+linux-dev-setup/
+├── configs/           # Archivos de configuración
+├── docs/              # Documentación completa
+│   ├── ai/           # Herramientas de IA
+│   ├── setup/        # Guías de instalación
+│   └── terminal/     # Comandos y herramientas
+├── scripts/          # Scripts de automatización
+├── prompts/          # Prompts para herramientas de IA
+├── backups/          # Copias de seguridad
+└── README.md         # Este archivo
 ```
 
 ---
 
-# Documentación
+## 📚 Documentación
 
-Toda la documentación se encuentra en la carpeta:
+Toda la documentación se encuentra en la carpeta [`docs/`](docs/).
 
-```
-docs/
-```
+**Comienza por:**
 
-Comienza por:
+- [`docs/index.md`](docs/index.md) - Índice principal de la documentación
 
-- `docs/INDEX.md`
+**Documentación disponible:**
+
+- [`docs/linux-survival-guide.md`](docs/linux-survival-guide.md) - Guía de supervivencia en Linux
+- [`docs/ai/README.md`](docs/ai/README.md) - Herramientas de Inteligencia Artificial
+- [`docs/setup/installed-tools.md`](docs/setup/installed-tools.md) - Herramientas instaladas
+- [`docs/terminal/navigation.md`](docs/terminal/navigation.md) - Navegación en terminal
+- [`docs/terminal/aliases.md`](docs/terminal/aliases.md) - Alias configurados
+- [`docs/terminal/tools.md`](docs/terminal/tools.md) - Herramientas de terminal
 
 ---
 
-# Herramientas instaladas
+## 🛠️ Herramientas Instaladas
 
 Actualmente el entorno incluye:
 
+### Desarrollo
 - Git
 - GitHub SSH
 - Docker
@@ -66,6 +87,8 @@ Actualmente el entorno incluye:
 - Kotlin
 - Gradle
 - VS Code
+
+### Terminal
 - Zsh
 - Oh My Zsh
 - Starship
@@ -75,34 +98,42 @@ Actualmente el entorno incluye:
 - Bat
 - Btop
 
----
-
-# Scripts
-
-Los scripts del proyecto se encuentran en:
-
-```
-scripts/
-```
-
-Actualmente:
-
-- doctor.sh
+Para más detalles, consulta [`docs/setup/installed-tools.md`](docs/setup/installed-tools.md).
 
 ---
 
-# Filosofía
+## 📜 Scripts
+
+Los scripts del proyecto se encuentran en [`scripts/`](scripts/).
+
+**Actualmente:**
+
+- `doctor.sh` - Script de verificación del sistema
+
+---
+
+## 💡 Filosofía
 
 Este proyecto sigue algunos principios:
 
-- Configuración reproducible.
-- Documentación clara.
-- Automatización antes que repetición.
-- Uso de herramientas oficiales cuando sea posible.
-- Aprender el porqué de cada herramienta.
+- **Configuración reproducible** - Todo debe poder recrearse fácilmente
+- **Documentación clara** - Cada herramienta y configuración está documentada
+- **Automatización antes que repetición** - Scripts para tareas repetitivas
+- **Uso de herramientas oficiales** - Preferir herramientas estándar y bien mantenidas
+- **Aprender el porqué** - Entender la razón detrás de cada herramienta
 
 ---
 
-# Licencia
+## 📄 Licencia
 
-Proyecto personal de aprendizaje.
+Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) para más detalles.
+
+---
+
+## 🤝 Contribuir
+
+Este es un proyecto de aprendizaje personal, pero si encuentras algo útil o quieres sugerir mejoras, ¡siéntete libre de abrir un issue o un pull request!
+
+---
+
+**Última actualización:** 2026
