@@ -14,12 +14,10 @@ Un entorno de desarrollo reproducible, organizado y documentado para **Pop!_OS**
 
 ## 📋 Tabla de Contenidos
 
-- [Objetivos](#objetivos)
 - [Estructura](#estructura)
 - [Documentación](#documentación)
 - [Herramientas Instaladas](#herramientas-instaladas)
 - [Scripts](#scripts)
-- [Filosofía](#filosofía)
 - [Licencia](#licencia)
 - [Contribuir](#contribuir)
 
@@ -29,9 +27,7 @@ Un entorno de desarrollo reproducible, organizado y documentado para **Pop!_OS**
 
 Este repositorio tiene como finalidad:
 
-- **Documentar completamente** mi entorno de desarrollo
-- **Poder reconstruir** mi computadora desde cero
-- **Aprender Linux** de forma práctica
+- **Documentar completamente** un entorno de desarrollo
 - **Centralizar** configuraciones, scripts y documentación
 - **Versionar** todos los cambios importantes
 
