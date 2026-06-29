@@ -10,8 +10,6 @@ Descripción de las herramientas de terminal que componen el entorno de desarrol
 - [Git](#git)
 - [Archivos](#archivos)
 
----
-
 ## 🐚 Shell y Prompt
 
 ### Zsh
@@ -202,4 +200,4 @@ yz
 
 Estas herramientas forman la base del entorno de desarrollo. Para comandos de navegación básicos, consulta [`navigation.md`](navigation.md).
 
-**Volver.al [Índice](../index.md)**
+**Volver al [Índice](../index.md)**
