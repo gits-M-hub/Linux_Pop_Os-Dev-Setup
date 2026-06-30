@@ -98,4 +98,4 @@ response = model.generate_content(
 
 ---
 
-**Volver a [Herramientas de IA](README.md)**
+**Volver a [Herramientas de IA](/docs/ai/README.md)**

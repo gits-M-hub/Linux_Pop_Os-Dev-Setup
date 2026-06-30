@@ -58,16 +58,16 @@ Toda la documentación se encuentra en la carpeta [`docs/`](docs/).
 
 **Comienza por:**
 
-- [`docs/index.md`](docs/index.md) - Índice principal de la documentación
+- [`docs/index.md`](/docs/index.md) - Índice principal de la documentación
 
 **Documentación disponible:**
 
-- [`docs/linux-survival-guide.md`](docs/linux-survival-guide.md) - Guía de supervivencia en Linux
-- [`docs/ai/README.md`](docs/ai/README.md) - Herramientas de Inteligencia Artificial
-- [`docs/setup/installed-tools.md`](docs/setup/installed-tools.md) - Herramientas instaladas
-- [`docs/terminal/navigation.md`](docs/terminal/navigation.md) - Navegación en terminal
-- [`docs/terminal/aliases.md`](docs/terminal/aliases.md) - Alias configurados
-- [`docs/terminal/tools.md`](docs/terminal/tools.md) - Herramientas de terminal
+- [`docs/linux-survival-guide.md`](/docs/linux-survival-guide.md) - Guía de supervivencia en Linux
+- [`docs/ai/README.md`](/docs/ai/README.md) - Herramientas de Inteligencia Artificial
+- [`docs/setup/installed-tools.md`](/docs/setup/installed-tools.md) - Herramientas instaladas
+- [`docs/terminal/navigation.md`](/docs/terminal/navigation.md) - Navegación en terminal
+- [`docs/terminal/aliases.md`](/docs/terminal/aliases.md) - Alias configurados
+- [`docs/terminal/tools.md`](/docs/terminal/tools.md) - Herramientas de terminal
 
 ---
 
@@ -94,13 +94,13 @@ Actualmente el entorno incluye:
 - Bat
 - Btop
 
-Para más detalles, consulta [`docs/setup/installed-tools.md`](docs/setup/installed-tools.md).
+Para más detalles, consulta [`docs/setup/installed-tools.md`](/docs/setup/installed-tools.md).
 
 ---
 
 ## 📜 Scripts
 
-Los scripts del proyecto se encuentran en [`scripts/`](scripts/).
+Los scripts del proyecto se encuentran en [`scripts/`](/scripts/).
 
 **Actualmente:**
 
@@ -122,7 +122,7 @@ Este proyecto sigue algunos principios:
 
 ## 📄 Licencia
 
-Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) para más detalles.
+Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE](/LICENSE) para más detalles.
 
 ---
 

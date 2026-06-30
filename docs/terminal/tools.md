@@ -198,6 +198,6 @@ yz
 
 ## 📝 Notas
 
-Estas herramientas forman la base del entorno de desarrollo. Para comandos de navegación básicos, consulta [`navigation.md`](navigation.md).
+Estas herramientas forman la base del entorno de desarrollo. Para comandos de navegación básicos, consulta [`navigation.md`](/docs/terminal/navigation.md).
 
-**Volver al [Índice](../index.md)**
+**Volver al [Índice](/docs/index.md)**

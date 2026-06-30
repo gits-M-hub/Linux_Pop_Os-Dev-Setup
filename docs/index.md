@@ -98,4 +98,4 @@ Cada documento intenta responder tres preguntas fundamentales:
 
 ---
 
-**Volver al [README principal](../README.md)**
+**Volver al [README principal](/README.md)**

@@ -136,4 +136,4 @@ htop
 
 Esta guía se irá actualizando conforme se encuentren nuevas situaciones de emergencia.
 
-**Volver al [Índice](index.md)**
+**Volver al [Índice](/docs/index.md)**

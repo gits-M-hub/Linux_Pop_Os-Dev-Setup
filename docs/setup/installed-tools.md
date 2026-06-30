@@ -64,4 +64,4 @@ Este documento irá creciendo conforme el entorno evolucione.
 
 ---
 
-**Volver al [Índice](../index.md)**
+**Volver al [Índice](/docs/index.md)**
