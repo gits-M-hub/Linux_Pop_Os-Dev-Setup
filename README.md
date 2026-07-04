@@ -62,12 +62,12 @@ Toda la documentación se encuentra en la carpeta [`docs/`](docs/).
 
 **Documentación disponible:**
 
-- [`docs/linux-survival-guide.md`](/docs/linux-survival-guide.md) - Guía de supervivencia en Linux
-- [`docs/ai/README.md`](/docs/ai/README.md) - Herramientas de Inteligencia Artificial
-- [`docs/setup/installed-tools.md`](/docs/setup/installed-tools.md) - Herramientas instaladas
-- [`docs/terminal/navigation.md`](/docs/terminal/navigation.md) - Navegación en terminal
-- [`docs/terminal/aliases.md`](/docs/terminal/aliases.md) - Alias configurados
-- [`docs/terminal/tools.md`](/docs/terminal/tools.md) - Herramientas de terminal
+[`docs/linux-survival-guide.md`](/docs/linux-survival-guide.md) - Guía de supervivencia en Linux
+[`docs/ai/README.md`](/docs/ai/README.md) - Herramientas de Inteligencia Artificial
+[`docs/setup/installed-tools.md`](/docs/setup/installed-tools.md) - Herramientas instaladas
+[`docs/terminal/navigation.md`](/docs/terminal/navigation.md) - Navegación en terminal
+[`docs/terminal/tools.md`](/docs/terminal/tools.md) - Herramientas de terminalç
+[`docs/terminal/aliases.md`](/docs/terminal/aliases.md) - Alias configurados
 
 ---
 

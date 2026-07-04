@@ -1,0 +1,64 @@
+# Archivos del sistema
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Archivos de configuración personales (si contienen datos sensibles)
+*.local
+.env
+.env.local
+
+# Backups
+backups/*
+!backups/.gitkeep
+
+# Notas personales
+notes/*
+!notes/.gitkeep
+
+# Logs
+*.log
+logs/
+
+# Archivos temporales
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# IDE
+.vscode/
+.idea/
+*.sublime-*
+
+# Node modules (si se usa algún script con node)
+node_modules/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+
+# Archivos compilados
+*.o
+*.so
+*.dylib
+*.dll
+*.exe
+
+# Archivos de configuración con datos sensibles
+configs/**/secrets*
+configs/**/*secret*
+configs/**/private*
+configs/**/*private*
+
+# Prompts con información sensible
+prompts/**/private*
+prompts/**/*private*
