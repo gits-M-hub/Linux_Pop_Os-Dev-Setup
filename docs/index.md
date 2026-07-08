@@ -5,6 +5,7 @@ Bienvenido a la documentación del entorno de desarrollo Linux Pop!_OS.
 ## 📋 Tabla de Contenidos
 
 - [Guías de Terminal](#guías-de-terminal)
+- [Docker](#docker)
 - [Configuración e Instalación](#configuración-e-instalación)
 - [Herramientas de IA](#herramientas-de-ia)
 - [Guías de Supervivencia](#guías-de-supervivencia)
@@ -31,6 +32,22 @@ Bienvenido a la documentación del entorno de desarrollo Linux Pop!_OS.
   - Zsh, Oh My Zsh, Starship
   - Tree, Bat, Btop
   - LazyGit, Yazi
+
+---
+
+## 🐳 Docker
+
+### Alias de Docker
+- [`docker-aliases.md`](docker-aliases.md) - Documentación completa de alias de Docker
+  - Comandos básicos (`d`, `dc`)
+  - Gestión de contenedores (`dps`, `dpsa`, `dstop`)
+  - Gestión de imágenes (`di`, `dpull`, `dpush`)
+  - Gestión de volúmenes (`dvol`, `dvolrm`)
+  - Gestión de redes (`dnet`, `dnetcreate`)
+  - Limpieza (`dprune`, `dprunea`)
+  - Ejecución en contenedores (`dex`, `dsh`, `dshz`)
+  - Docker Compose (`dce`, `dcb`, `dcu`, `dcd`, `dcp`, `dcl`, `dclf`)
+  - Estadísticas e inspección (`dstats`, `dinsp`)
 
 ---
 
