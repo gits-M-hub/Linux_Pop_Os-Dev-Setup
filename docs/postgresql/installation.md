@@ -348,6 +348,67 @@ sudo -u postgres psql -c "SELECT * FROM pg_stat_activity;"
 
 ---
 
+## Solución de Problemas
+
+### Error: "role does not exist" al ejecutar psql
+
+Si al ejecutar `psql` obtienes este error:
+
+```
+psql: error: connection to server on socket "/var/run/postgresql/.s.PGSQL.5432" failed: FATAL:  role "tu_usuario" does not exist
+```
+
+**Causa:** PostgreSQL intenta conectarte como el usuario actual del sistema a una base de datos con el mismo nombre, pero ese usuario no existe como role en PostgreSQL.
+
+**Soluciones:**
+
+#### Opción 1: Conectarte como usuario postgres (recomendado para administración)
+
+```bash
+sudo -u postgres psql
+```
+
+#### Opción 2: Crear tu usuario en PostgreSQL (recomendado para uso diario)
+
+```bash
+# Conecta como postgres primero
+sudo -u postgres psql
+
+# Crea tu usuario con contraseña
+CREATE USER maximilianobalam WITH PASSWORD 'tu_contraseña';
+
+# Otorga privilegios de superusuario (opcional)
+ALTER USER maximilianobalam WITH SUPERUSER;
+
+# Crea una base de datos con tu nombre
+CREATE DATABASE maximilianobalam OWNER maximilianobalam;
+
+# Sal de psql
+\q
+```
+
+Luego podrás entrar directamente con:
+
+```bash
+psql
+```
+
+#### Opción 3: Especificar usuario explícitamente
+
+```bash
+psql -U postgres
+```
+
+#### Opción 4: Usar el alias configurado
+
+```bash
+psql-admin
+```
+
+**Recomendación:** La opción 2 es la más conveniente para uso diario. Una vez creado tu usuario, podrás entrar simplemente con `psql` sin especificar argumentos.
+
+---
+
 ## Alias Configurados
 
 El proyecto incluye alias en `configs/aliases/postgres.zsh`:
