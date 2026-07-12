@@ -106,4 +106,4 @@ def factorial(n):
 
 ---
 
-**Volver a [Herramientas de IA](/docs/ai/README.md)**
+**Volver a [Herramientas de IA](README.md)**

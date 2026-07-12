@@ -73,4 +73,4 @@ Las herramientas de IA en este entorno se utilizan para:
 
 ---
 
-**Volver al [Índice](/docs/index.md)**
+**Volver al [Índice](../index.md)**
