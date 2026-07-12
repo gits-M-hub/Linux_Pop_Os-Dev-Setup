@@ -187,4 +187,4 @@ source ~/.zshrc
 
 Este documento debe actualizarse cada vez que se cree un nuevo alias.
 
-**Volver al [Índice](/docs/index.md)**
+**Volver al [Índice](../index.md)**

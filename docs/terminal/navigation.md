@@ -296,4 +296,4 @@ Limpia la pantalla de la terminal.
 
 ---
 
-**Volver al [Índice](/docs/index.md)**
+**Volver al [Índice](../index.md)**

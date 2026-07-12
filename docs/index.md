@@ -6,6 +6,7 @@ Bienvenido a la documentación del entorno de desarrollo Linux Pop!_OS.
 
 - [Guías de Terminal](#guías-de-terminal)
 - [Docker](#docker)
+- [PostgreSQL](#postgresql)
 - [Configuración e Instalación](#configuración-e-instalación)
 - [Herramientas de IA](#herramientas-de-ia)
 - [Guías de Supervivencia](#guías-de-supervivencia)
@@ -48,6 +49,33 @@ Bienvenido a la documentación del entorno de desarrollo Linux Pop!_OS.
   - Ejecución en contenedores (`dex`, `dsh`, `dshz`)
   - Docker Compose (`dce`, `dcb`, `dcu`, `dcd`, `dcp`, `dcl`, `dclf`)
   - Estadísticas e inspección (`dstats`, `dinsp`)
+
+---
+
+## 🐘 PostgreSQL
+
+### Instalación
+- [`postgresql/installation.md`](postgresql/installation.md) - Guía de instalación de PostgreSQL
+  - Instalación en Pop!_OS/Ubuntu
+  - Configuración inicial
+  - Configuración de seguridad
+  - Configuración de acceso remoto
+  - Solución de problemas
+
+### Uso
+- [`postgresql/usage.md`](postgresql/usage.md) - Guía completa de uso de PostgreSQL
+  - Conexión a PostgreSQL
+  - Comandos básicos de psql
+  - Gestión de bases de datos
+  - Gestión de tablas
+  - Operaciones CRUD
+  - Consultas avanzadas (JOIN, subconsultas, GROUP BY)
+  - Funciones y agregaciones
+  - Índices y rendimiento
+  - Backup y restore
+  - Gestión de usuarios
+  - Transacciones
+  - Vistas y triggers
 
 ---
 
