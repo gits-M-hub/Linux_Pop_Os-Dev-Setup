@@ -1,0 +1,105 @@
+# ====================================
+# Linux Dev Setup - Git Configuration
+# ====================================
+# Configuración global de Git
+
+[user]
+# El nombre y email se configuran durante la instalación
+# name = "Tu Nombre"
+# email = "tu@email.com"
+
+[init]
+defaultBranch = main
+
+[core]
+editor = nano
+autocrlf = input
+quotePath = false
+
+[commit]
+verbose = true
+
+[log]
+decorate = true
+date = relative
+
+[merge]
+conflictstyle = diff3
+tool = vscode
+
+[mergetool "vscode"]
+cmd = code --wait $MERGED $LOCAL $BASE $REMOTE
+trustExitCode = true
+
+[diff]
+tool = vscode
+algorithm = patience
+
+[difftool "vscode"]
+cmd = code --wait --diff $LOCAL $REMOTE
+trustExitCode = true
+
+[color]
+ui = auto
+
+[alias]
+# Alias comunes
+st = status
+co = checkout
+br = branch
+ci = commit
+unstage = reset HEAD --
+last = log -1 HEAD
+
+# Log mejorado
+lg = log --graph --oneline --decorate --all
+lga = log --graph --oneline --decorate --all --date=short --format="%C(auto)%h %ad %C(bold blue)%an %C(auto)%d %s"
+
+# Branch
+ba = branch -a
+bd = branch -d
+bD = branch -D
+
+# Remote
+r = remote
+rv = remote -v
+ra = remote add
+rr = remote remove
+
+# Stash
+stash = stash
+stash-pop = stash pop
+stash-list = stash list
+
+# Clean
+clean = clean -fd
+
+# Reset
+reset-hard = reset --hard
+reset-soft = reset --soft HEAD~1
+
+[rebase]
+autoStash = true
+
+[pull]
+rebase = false
+
+[push]
+autoSetupRemote = true
+
+[fetch]
+prune = true
+
+[tag]
+forceSignAnnotated = false
+
+[status]
+short = true
+branch = true
+showUntrackedFiles = all
+
+[branch]
+sort = -committerdate
+
+[advice]
+detachedHead = false

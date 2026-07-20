@@ -1,0 +1,63 @@
+{
+  // ====================================
+  // Linux Dev Setup - VS Code Extensions
+  // ====================================
+  // Extensiones recomendadas para el entorno de desarrollo
+
+  "recommendations": [
+    // General
+    "ms-vscode.vscode-json",
+    "streetsidesoftware.code-spell-checker",
+    "eamodio.gitlens",
+    "github.copilot",
+    "github.copilot-chat",
+
+    // Java
+    "redhat.java",
+    "vscjava.vscode-java-pack",
+    "sonarsource.sonarlint-vscode",
+
+    // Kotlin
+    "fwcd.kotlin",
+
+    // Docker
+    "ms-azuretools.vscode-docker",
+
+    // Python
+    "ms-python.python",
+    "ms-python.vscode-pylance",
+
+    // JavaScript/TypeScript
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+
+    // Markdown
+    "yzhang.markdown-all-in-one",
+
+    // Shell
+    "timonwong.shellcheck",
+
+    // Git
+    "mhutchie.git-graph",
+
+    // Themes
+    "PKief.material-icon-theme",
+    "zhuangtongfa.material-theme",
+
+    // Productivity
+    "usernamehw.errorlens",
+    "wakatime.vscode-wakatime",
+    "gruntfuggly.todo-tree",
+
+    // Testing
+    "ms-vscode.test-adapter-converter",
+
+    // Remote
+    "ms-vscode-remote.remote-containers",
+    "ms-vscode-remote.remote-ssh",
+
+    // Database
+    "mtxr.sqltools",
+    "mtxr.sqltools-driver-pg"
+  ]
+}

@@ -1,6 +1,6 @@
-# 🚀 Linux Pop!_OS Dev Setup
+# 🚀 Linux Pop!\_OS Dev Setup
 
-Un entorno de desarrollo reproducible, organizado y documentado para **Pop!_OS**, pensado para desarrollo de software moderno con énfasis en:
+Un entorno de desarrollo reproducible, organizado y documentado para **Pop!\_OS**, pensado para desarrollo de software moderno con énfasis en:
 
 - ☕ Java
 - 🟣 Kotlin
@@ -30,8 +30,29 @@ Este repositorio tiene como finalidad:
 - **Documentar completamente** un entorno de desarrollo
 - **Centralizar** configuraciones, scripts y documentación
 - **Versionar** todos los cambios importantes
+- **Automatizar la instalación** del entorno completo
 
-Este proyecto está diseñado para ser un **setup reproducible** que permite reinstalar el entorno de desarrollo en Pop!_OS rápidamente cuando sea necesario.
+Este proyecto está diseñado para ser un **setup reproducible** que permite reinstalar el entorno de desarrollo en Pop!\_OS rápidamente cuando sea necesario.
+
+## 🚀 Instalación Rápida
+
+Para instalar el entorno completo, ejecuta:
+
+```bash
+# Clonar el repositorio
+git clone https://github.com/gits-M-hub/Linux_Pop_Os-Dev-Setup.git ~/Projects/linux-dev-setup
+cd ~/Projects/linux-dev-setup
+
+# Ejecutar script de instalación
+./scripts/install/setup.sh
+```
+
+El script instalará automáticamente:
+
+- Herramientas base (Zsh, Oh My Zsh, Starship, LazyGit, Yazi)
+- Herramientas de desarrollo (SDKMAN, Java, Kotlin, Docker, VS Code, PostgreSQL)
+- Configuraciones (Zsh, Starship, Git, VS Code)
+- Alias de terminal
 
 ---
 
@@ -76,6 +97,7 @@ Toda la documentación se encuentra en la carpeta [`docs/`](docs/).
 Actualmente el entorno incluye:
 
 ### Desarrollo
+
 - Git
 - GitHub SSH
 - Docker
@@ -85,6 +107,7 @@ Actualmente el entorno incluye:
 - VS Code
 
 ### Terminal
+
 - Zsh
 - Oh My Zsh
 - Starship
@@ -102,9 +125,24 @@ Para más detalles, consulta [`docs/setup/installed-tools.md`](/docs/setup/insta
 
 Los scripts del proyecto se encuentran en [`scripts/`](/scripts/).
 
-**Actualmente:**
+### Instalación
 
-- `doctor.sh` - Script de verificación del sistema
+- [`scripts/install/setup.sh`](scripts/install/setup.sh) - Script principal de instalación completa
+- [`scripts/install/install-base-tools.sh`](scripts/install/install-base-tools.sh) - Instalación de herramientas base (Zsh, Oh My Zsh, Starship, LazyGit, Yazi)
+- [`scripts/install/install-dev-tools.sh`](scripts/install/install-dev-tools.sh) - Instalación de herramientas de desarrollo (SDKMAN, Java, Kotlin, Docker, VS Code, PostgreSQL)
+- [`scripts/install/install-aliases.sh`](scripts/install/install-aliases.sh) - Instalación de alias en ~/.zshrc
+
+### Docker
+
+- `scripts/docker/docker-doctor.sh` - Verificación de instalación de Docker
+- `scripts/docker/docker-clean.sh` - Limpieza de recursos de Docker
+- `scripts/docker/docker-reset.sh` - Reset completo de Docker
+- `scripts/docker/docker-backup-volumes.sh` - Backup de volúmenes Docker
+
+### Sistema
+
+- `scripts/doctor.sh` - Script de verificación del sistema
+- `scripts/update-system.sh` - Actualización del sistema
 
 ---
 

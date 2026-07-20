@@ -1,0 +1,141 @@
+# ====================================
+# Linux Dev Setup - Starship Configuration
+# ====================================
+# Configuración del prompt Starship
+
+# Formato del prompt
+format = """
+[┌─────────────────>](bold green)
+[│](bold green) $directory
+[│](bold green) $git_branch$git_commit$git_state$git_status
+[│](bold green) $java$kotlin$nodejs$python$golang$rust
+[│](bold green) $docker$docker_context
+[│](bold green) $package
+[│](bold green) $cmd_duration
+[└─>](bold green) $character"""
+
+# Continuación del prompt para comandos multilinea
+right_format = """$time"""
+
+# Timeout para comandos
+command_timeout = 5000
+
+# Carácter de prompt
+[character]
+success_symbol = "[➜](bold green)"
+error_symbol = "[✗](bold red)"
+vicmd_symbol = "[V](bold green)"
+
+# Directorio
+[directory]
+style = "bold cyan"
+truncation_length = 3
+truncate_to_repo = false
+fish_style_pwd_dir_length = 1
+
+# Git
+[git_branch]
+style = "bold purple"
+symbol = "🌿 "
+
+[git_commit]
+style = "bold yellow"
+commit_hash_length = 7
+only_detached = false
+
+[git_state]
+style = "bold red"
+format = '[\($state\)]($style) '
+
+[git_status]
+style = "bold red"
+format = '([\[$all_status$ahead_behind\]]($style))'
+conflicted = "⚔️ "
+ahead = "⇡${count}"
+behind = "⇣${count}"
+diverged = "⇕⇡${ahead_count}⇣${behind_count}"
+untracked = "?"
+stashed = "📦"
+modified = "📝"
+staged = "✅"
+renamed = "➡️"
+deleted = "🗑️"
+
+# Lenguajes de programación
+[java]
+style = "bold red"
+symbol = "☕ "
+
+[kotlin]
+style = "bold purple"
+symbol = "🟣 "
+
+[nodejs]
+style = "bold green"
+symbol = "📦 "
+
+[python]
+style = "bold yellow"
+symbol = "🐍 "
+
+[golang]
+style = "bold cyan"
+symbol = "🐹 "
+
+[rust]
+style = "bold orange"
+symbol = "🦀 "
+
+# Docker
+[docker]
+style = "bold blue"
+symbol = "🐳 "
+format = "via [$symbol$context]($style) "
+
+[docker_context]
+style = "bold blue"
+format = "[$context]($style)"
+
+# Paquetes
+[package]
+style = "bold red"
+symbol = "📦 "
+display_private = false
+
+# Duración del comando
+[cmd_duration]
+style = "bold yellow"
+format = "⏱️ [$duration]($style)"
+min_time = 1000
+
+# Tiempo
+[time]
+style = "bold white"
+format = "[$time]($style)"
+disabled = false
+
+# Otros módulos útiles
+[battery]
+style = "bold green"
+full_symbol = "🔋"
+charging_symbol = "⚡"
+discharging_symbol = "💀"
+
+[hostname]
+style = "bold dimmed"
+ssh_only = true
+format = "[$hostname]($style) "
+
+[username]
+style_user = "bold green"
+style_root = "bold red"
+show_always = false
+
+[status]
+style = "bold red"
+symbol = "✗"
+format = "[$symbol$status]($style) "
+disabled = false
+pipestatus = true
+pipestatus_format = "[$symbol$pipestatus]($style) "
+pipestatus_separator = "|"
