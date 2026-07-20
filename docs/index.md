@@ -1,6 +1,6 @@
 # 📚 Índice de Documentación
 
-Bienvenido a la documentación del entorno de desarrollo Linux Pop!_OS.
+Bienvenido a la documentación del entorno de desarrollo Linux Pop!\_OS.
 
 ## 📋 Tabla de Contenidos
 
@@ -17,18 +17,21 @@ Bienvenido a la documentación del entorno de desarrollo Linux Pop!_OS.
 ## 🖥️ Guías de Terminal
 
 ### Navegación
+
 - [`terminal/navigation.md`](terminal/navigation.md) - Comandos básicos de navegación en Linux
   - `pwd`, `cd`, `ls`, `tree`
   - Creación y gestión de archivos y carpetas
   - Búsqueda de archivos
 
 ### Alias
+
 - [`terminal/aliases.md`](terminal/aliases.md) - Alias configurados para mayor productividad
   - Alias de Git (`gs`, `ga`, `gc`, `gp`, `gl`)
   - Alias de herramientas (`lg`, `yz`)
   - Alias del sistema
 
 ### Herramientas
+
 - [`terminal/tools.md`](terminal/tools.md) - Descripción de herramientas de terminal
   - Zsh, Oh My Zsh, Starship
   - Tree, Bat, Btop
@@ -39,6 +42,7 @@ Bienvenido a la documentación del entorno de desarrollo Linux Pop!_OS.
 ## 🐳 Docker
 
 ### Alias de Docker
+
 - [`docker-aliases.md`](docker-aliases.md) - Documentación completa de alias de Docker
   - Comandos básicos (`d`, `dc`)
   - Gestión de contenedores (`dps`, `dpsa`, `dstop`)
@@ -55,14 +59,16 @@ Bienvenido a la documentación del entorno de desarrollo Linux Pop!_OS.
 ## 🐘 PostgreSQL
 
 ### Instalación
+
 - [`postgresql/installation.md`](postgresql/installation.md) - Guía de instalación de PostgreSQL
-  - Instalación en Pop!_OS/Ubuntu
+  - Instalación en Pop!\_OS/Ubuntu
   - Configuración inicial
   - Configuración de seguridad
   - Configuración de acceso remoto
   - Solución de problemas
 
 ### Uso
+
 - [`postgresql/usage.md`](postgresql/usage.md) - Guía completa de uso de PostgreSQL
   - Conexión a PostgreSQL
   - Comandos básicos de psql
@@ -82,17 +88,46 @@ Bienvenido a la documentación del entorno de desarrollo Linux Pop!_OS.
 ## ⚙️ Configuración e Instalación
 
 ### Herramientas Instaladas
+
 - [`setup/installed-tools.md`](setup/installed-tools.md) - Lista completa de herramientas instaladas
   - Terminal (Zsh, Oh My Zsh, Starship, etc.)
   - Desarrollo (Git, Docker, Java, Kotlin, VS Code)
   - Gestores (SDKMAN!)
   - Scripts propios
 
+### Guías de Instalación
+
+- [`setup/install-git.md`](setup/install-git.md) - Guía de instalación de Git
+  - Instalación desde repositorio o fuente
+  - Configuración inicial
+  - Configuración de SSH con GitHub
+  - Configuración adicional y alias
+- [`setup/install-docker.md`](setup/install-docker.md) - Guía de instalación de Docker
+  - Instalación desde repositorio oficial
+  - Configuración post-instalación
+  - Docker Compose
+  - Solución de problemas
+- [`setup/install-sdkman.md`](setup/install-sdkman.md) - Guía de instalación de SDKMAN!
+  - Instalación y configuración
+  - Gestión de Java, Kotlin y Gradle
+  - Gestión de múltiples versiones
+- [`setup/install-vscode.md`](setup/install-vscode.md) - Guía de instalación de VS Code
+  - Instalación desde repositorio oficial
+  - Configuración básica
+  - Extensiones recomendadas
+  - Atajos de teclado
+- [`setup/install-terminal-tools.md`](setup/install-terminal-tools.md) - Guía de instalación de herramientas de terminal
+  - Zsh, Oh My Zsh, Starship
+  - Tree, Bat, Btop
+  - LazyGit, Yazi
+  - Ripgrep, fd
+
 ---
 
 ## 🤖 Herramientas de IA
 
 ### Índice de IA
+
 - [`ai/README.md`](ai/README.md) - Introducción a las herramientas de IA
   - Claude Code
   - Codex
@@ -100,6 +135,7 @@ Bienvenido a la documentación del entorno de desarrollo Linux Pop!_OS.
   - Prompts
 
 ### Documentos Específicos
+
 - [`ai/claude.md`](ai/claude.md) - Guía de Claude Code
 - [`ai/codex.md`](ai/codex.md) - Guía de Codex
 - [`ai/gemini.md`](ai/gemini.md) - Guía de Gemini
@@ -110,6 +146,7 @@ Bienvenido a la documentación del entorno de desarrollo Linux Pop!_OS.
 ## 🆘 Guías de Supervivencia
 
 ### Linux Survival Guide
+
 - [`linux-survival-guide.md`](linux-survival-guide.md) - Lecciones aprendidas y tips esenciales
   - Cómo salir de comandos que "atrapan" la terminal
   - Verificar el directorio actual antes de crear archivos
