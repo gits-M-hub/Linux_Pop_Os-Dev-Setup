@@ -37,6 +37,11 @@ Bienvenido a la documentación del entorno de desarrollo Linux Pop!\_OS.
   - Tree, Bat, Btop
   - LazyGit, Yazi
 
+- [`terminal/lazygit.md`](terminal/lazygit.md) - Guía completa de LazyGit
+  - Instalación y uso básico
+  - Atajos de teclado
+  - Flujos de trabajo comunes
+
 ---
 
 ## 🐳 Docker

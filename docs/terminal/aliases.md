@@ -44,6 +44,7 @@ git add
 Añade archivos al área de staging.
 
 **Uso común:**
+
 ```bash
 ga .           # Añadir todos los archivos
 ga archivo.txt # Añadir archivo específico
@@ -66,6 +67,7 @@ git commit
 Crea un nuevo commit con los cambios staged.
 
 **Uso común:**
+
 ```bash
 gc -m "mensaje" # Commit con mensaje
 ```
@@ -114,7 +116,7 @@ lg
 
 Abre LazyGit, una interfaz de Git para la terminal.
 
-**Para más información:** [`tools.md`](tools.md#lazygit)
+**Para más información:** [`lazygit.md`](lazygit.md)
 
 ---
 
@@ -147,6 +149,7 @@ batcat
 Muestra archivos con resaltado de sintaxis, numeración de líneas y más.
 
 **Ventajas sobre `cat` original:**
+
 - Resaltado de sintaxis
 - Numeración de líneas
 - Integración con Git
@@ -159,6 +162,7 @@ Muestra archivos con resaltado de sintaxis, numeración de líneas y más.
 Los alias se configuran en el archivo `~/.zshrc`.
 
 **Ejemplo de configuración:**
+
 ```bash
 # Git aliases
 alias gs='git status'

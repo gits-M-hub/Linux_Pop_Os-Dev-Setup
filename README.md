@@ -61,13 +61,22 @@ El script instalará automáticamente:
 ```
 linux-dev-setup/
 ├── configs/           # Archivos de configuración
+│   ├── aliases/      # Alias de terminal
+│   ├── exports/      # Variables de entorno
+│   ├── git/          # Configuración de Git
+│   ├── starship/     # Configuración de Starship
+│   ├── vscode/       # Configuración de VS Code
+│   └── zsh/          # Configuración de Zsh
 ├── docs/              # Documentación completa
 │   ├── ai/           # Herramientas de IA
+│   ├── postgresql/   # Guías de PostgreSQL
 │   ├── setup/        # Guías de instalación
 │   └── terminal/     # Comandos y herramientas
 ├── scripts/          # Scripts de automatización
-├── prompts/          # Prompts para herramientas de IA
-├── backups/          # Copias de seguridad
+│   ├── docker/       # Scripts de Docker
+│   └── install/      # Scripts de instalación
+├── .gitignore        # Archivos ignorados por Git
+├── LICENSE           # Licencia del proyecto
 └── README.md         # Este archivo
 ```
 
