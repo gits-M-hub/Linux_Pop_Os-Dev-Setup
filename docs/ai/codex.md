@@ -17,6 +17,7 @@ Modelo de código de OpenAI.
 Codex es el modelo de lenguaje de OpenAI entrenado específicamente para código, capaz de entender y generar código en múltiples lenguajes de programación.
 
 **Características principales:**
+
 - Generación de código desde descripciones en lenguaje natural
 - Autocompletado inteligente en IDEs
 - Traducción entre lenguajes de programación
@@ -106,4 +107,4 @@ def factorial(n):
 
 ---
 
-**Volver a [Herramientas de IA](README.md)**
+**Volver a [Herramientas de IA](../README.md)**

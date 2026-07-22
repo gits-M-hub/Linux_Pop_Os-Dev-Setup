@@ -1,6 +1,6 @@
 # 🛠️ Herramientas Instaladas
 
-Lista completa de herramientas instaladas en el entorno de desarrollo Pop!_OS.
+Lista completa de herramientas instaladas en el entorno de desarrollo Pop!\_OS.
 
 ## 📋 Tabla de Contenidos
 
@@ -13,16 +13,16 @@ Lista completa de herramientas instaladas en el entorno de desarrollo Pop!_OS.
 
 ## 🖥️ Terminal
 
-| Herramienta | Estado | Descripción |
-|------------|--------|-------------|
-| Zsh | ✅ | Shell principal del sistema |
-| Oh My Zsh | ✅ | Framework para configuración de Zsh |
-| Starship | ✅ | Prompt moderno y configurable |
-| Tree | ✅ | Visualización de estructuras de directorios |
-| Bat | ✅ | Reemplazo moderno de `cat` con resaltado |
-| Btop | ✅ | Monitor interactivo del sistema |
-| LazyGit | ✅ | Interfaz de Git para terminal |
-| Yazi | ✅ | Administrador de archivos moderno |
+| Herramienta | Estado | Descripción                                 |
+| ----------- | ------ | ------------------------------------------- |
+| Zsh         | ✅     | Shell principal del sistema                 |
+| Oh My Zsh   | ✅     | Framework para configuración de Zsh         |
+| Starship    | ✅     | Prompt moderno y configurable               |
+| Tree        | ✅     | Visualización de estructuras de directorios |
+| Bat         | ✅     | Reemplazo moderno de `cat` con resaltado    |
+| Btop        | ✅     | Monitor interactivo del sistema             |
+| LazyGit     | ✅     | Interfaz de Git para terminal               |
+| Yazi        | ✅     | Administrador de archivos moderno           |
 
 Para más detalles, consulta [`../terminal/tools.md`](../terminal/tools.md).
 
@@ -30,23 +30,23 @@ Para más detalles, consulta [`../terminal/tools.md`](../terminal/tools.md).
 
 ## 💻 Desarrollo
 
-| Herramienta | Estado | Descripción |
-|------------|--------|-------------|
-| Git | ✅ | Sistema de control de versiones |
-| GitHub SSH | ✅ | Autenticación SSH con GitHub |
-| Docker | ✅ | Contenedores y virtualización |
-| Java | ✅ | Lenguaje Java (via SDKMAN!) |
-| Kotlin | ✅ | Lenguaje Kotlin (via SDKMAN!) |
-| Gradle | ✅ | Sistema de build automatizado |
-| VS Code | ✅ | Editor de código |
+| Herramienta | Estado | Descripción                     |
+| ----------- | ------ | ------------------------------- |
+| Git         | ✅     | Sistema de control de versiones |
+| GitHub SSH  | ✅     | Autenticación SSH con GitHub    |
+| Docker      | ✅     | Contenedores y virtualización   |
+| Java        | ✅     | Lenguaje Java (via SDKMAN!)     |
+| Kotlin      | ✅     | Lenguaje Kotlin (via SDKMAN!)   |
+| Gradle      | ✅     | Sistema de build automatizado   |
+| VS Code     | ✅     | Editor de código                |
 
 ---
 
 ## 📦 Gestores
 
-| Herramienta | Estado | Descripción |
-|------------|--------|-------------|
-| SDKMAN! | ✅ | Gestor de SDKs para Java/Kotlin/Groovy |
+| Herramienta | Estado | Descripción                            |
+| ----------- | ------ | -------------------------------------- |
+| SDKMAN!     | ✅     | Gestor de SDKs para Java/Kotlin/Groovy |
 
 ---
 
@@ -64,4 +64,4 @@ Este documento irá creciendo conforme el entorno evolucione.
 
 ---
 
-**Volver al [Índice](/docs/index.md)**
+**Volver al [Índice](../index.md)**

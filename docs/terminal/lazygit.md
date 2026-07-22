@@ -18,6 +18,7 @@ Guía completa de uso de LazyGit, la interfaz de terminal para Git.
 LazyGit es una interfaz de terminal para Git que hace trabajar con Git más fácil y eficiente. Proporciona una vista visual de tu repositorio Git y permite realizar operaciones comunes con simples atajos de teclado.
 
 **Características principales:**
+
 - Interfaz visual intuitiva
 - Atajos de teclado para operaciones comunes
 - Vista de archivos, ramas, commits y stash
@@ -93,56 +94,56 @@ LazyGit muestra varias secciones:
 
 ### Generales
 
-| Tecla | Acción |
-|-------|--------|
-| `q` | Salir |
-| `Esc` | Volver atrás |
+| Tecla   | Acción                |
+| ------- | --------------------- |
+| `q`     | Salir                 |
+| `Esc`   | Volver atrás          |
 | `Enter` | Confirmar/Seleccionar |
 | `Space` | Seleccionar múltiples |
-| `/` | Buscar |
+| `/`     | Buscar                |
 
 ### Archivos (Pestaña 1)
 
-| Tecla | Acción |
-|-------|--------|
-| `Space` | Staged/unstaged archivo |
-| `d` | Descartar cambios |
-| `e` | Editar archivo |
-| `i` | Ignorar archivo |
-| `a` | Staged todos los archivos |
-| `A` | Unstaged todos los archivos |
+| Tecla   | Acción                      |
+| ------- | --------------------------- |
+| `Space` | Staged/unstaged archivo     |
+| `d`     | Descartar cambios           |
+| `e`     | Editar archivo              |
+| `i`     | Ignorar archivo             |
+| `a`     | Staged todos los archivos   |
+| `A`     | Unstaged todos los archivos |
 
 ### Ramas (Pestaña 2)
 
-| Tecla | Acción |
-|-------|--------|
-| `n` | Nueva rama |
-| `d` | Eliminar rama |
-| `c` | Checkout rama |
-| `m` | Merge rama |
-| `r` | Rebase rama |
-| `f` | Fetch remoto |
+| Tecla | Acción        |
+| ----- | ------------- |
+| `n`   | Nueva rama    |
+| `d`   | Eliminar rama |
+| `c`   | Checkout rama |
+| `m`   | Merge rama    |
+| `r`   | Rebase rama   |
+| `f`   | Fetch remoto  |
 
 ### Commits (Pestaña 3)
 
-| Tecla | Acción |
-|-------|--------|
-| `c` | Commit |
-| `C` | Commit con mensaje |
-| `a` | Amend commit |
-| `r` | Revert commit |
-| `s` | Squash commits |
-| `f` | Fixup commit |
-| `d` | Drop commit |
+| Tecla | Acción             |
+| ----- | ------------------ |
+| `c`   | Commit             |
+| `C`   | Commit con mensaje |
+| `a`   | Amend commit       |
+| `r`   | Revert commit      |
+| `s`   | Squash commits     |
+| `f`   | Fixup commit       |
+| `d`   | Drop commit        |
 
 ### Stash (Pestaña 4)
 
-| Tecla | Acción |
-|-------|--------|
-| `s` | Stash |
-| `p` | Pop stash |
-| `a` | Apply stash |
-| `d` | Drop stash |
+| Tecla | Acción      |
+| ----- | ----------- |
+| `s`   | Stash       |
+| `p`   | Pop stash   |
+| `a`   | Apply stash |
+| `d`   | Drop stash  |
 
 ---
 
@@ -220,7 +221,7 @@ inactiveBorderColor:
 optionsTextColor:
   - blue
 selectedLineBgColor:
-    - default
+  - default
 ```
 
 ### Configuración de atajos personalizados
@@ -292,4 +293,4 @@ lg
 
 ---
 
-**Volver al [Índice](index.md)**
+**Volver al [Índice](../index.md)**

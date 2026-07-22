@@ -17,6 +17,7 @@ Asistente de programación por Anthropic.
 Claude Code es un asistente de programación impulsado por el modelo Claude de Anthropic, diseñado para ayudar con tareas de desarrollo de software.
 
 **Características principales:**
+
 - Generación y refactorización de código
 - Debugging y análisis de errores
 - Explicación de código complejo
@@ -37,6 +38,7 @@ npm install -g @anthropic-ai/claude-code
 ### Vía IDE Extensiones
 
 **VS Code:**
+
 1. Buscar "Claude Code" en el marketplace
 2. Instalar la extensión oficial
 3. Configurar con tu API key
@@ -99,4 +101,4 @@ claude "Explica qué hace este código: [pegar código]"
 
 ---
 
-**Volver a [Herramientas de IA](README.md)**
+**Volver a [Herramientas de IA](../README.md)**

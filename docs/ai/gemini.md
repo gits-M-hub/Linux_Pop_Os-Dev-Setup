@@ -17,6 +17,7 @@ Modelo multimodal de Google.
 Gemini es el modelo de inteligencia artificial multimodal de Google, capaz de entender y generar texto, código, imágenes y más.
 
 **Características principales:**
+
 - Análisis de código y sugerencias
 - Explicación de conceptos complejos
 - Generación de documentación
@@ -98,4 +99,4 @@ response = model.generate_content(
 
 ---
 
-**Volver a [Herramientas de IA](README.md)**
+**Volver a [Herramientas de IA](../README.md)**
