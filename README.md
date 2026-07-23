@@ -16,6 +16,7 @@ Un entorno de desarrollo reproducible, organizado y documentado para **Pop!\_OS*
 
 - [Estructura](#estructura)
 - [Documentación](#documentación)
+- [Documentación del Proyecto](#documentación-del-proyecto)
 - [Herramientas Instaladas](#herramientas-instaladas)
 - [Scripts](#scripts)
 - [Licencia](#licencia)
@@ -96,8 +97,24 @@ Toda la documentación se encuentra en la carpeta [`docs/`](docs/).
 [`docs/ai/README.md`](/docs/ai/README.md) - Herramientas de Inteligencia Artificial
 [`docs/setup/installed-tools.md`](/docs/setup/installed-tools.md) - Herramientas instaladas
 [`docs/terminal/navigation.md`](/docs/terminal/navigation.md) - Navegación en terminal
-[`docs/terminal/tools.md`](/docs/terminal/tools.md) - Herramientas de terminalç
+[`docs/terminal/tools.md`](/docs/terminal/tools.md) - Herramientas de terminal
 [`docs/terminal/aliases.md`](/docs/terminal/aliases.md) - Alias configurados
+
+---
+
+## 📖 Documentación del Proyecto
+
+Documentación para contribuidores y usuarios del proyecto:
+
+- [`CONTRIBUTING.md`](CONTRIBUTING.md) - Guía para contribuir al proyecto
+- [`CHANGELOG.md`](CHANGELOG.md) - Historial de cambios por versión
+- [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md) - Código de conducta de la comunidad
+
+**Para estudiantes:**
+
+- Si eres estudiante y quieres contribuir, revisa [`CONTRIBUTING.md`](CONTRIBUTING.md) para una guía paso a paso
+- No temas hacer preguntas o contribuir con cambios pequeños
+- Cada contribución cuenta, sin importar el tamaño
 
 ---
 
@@ -175,7 +192,15 @@ Este proyecto está bajo la Licencia MIT - ver el archivo [LICENSE](/LICENSE) pa
 
 ## 🤝 Contribuir
 
-Este es un proyecto de aprendizaje personal, pero si encuentras algo útil o quieres sugerir mejoras, ¡siéntete libre de abrir un issue o un pull request!
+¡Las contribuciones son bienvenidas! Si quieres contribuir al proyecto:
+
+1. Lee la [guía para contribuidores](CONTRIBUTING.md)
+2. Revisa el [código de conducta](CODE_OF_CONDUCT.md)
+3. Abre un issue para discutir cambios grandes
+4. Haz fork del repositorio y crea una rama para tu feature
+5. Envía un pull request con descripción clara
+
+**Para estudiantes:** Este proyecto es especialmente amigable con estudiantes que están aprendiendo. Revisa la sección para estudiantes en [CONTRIBUTING.md](CONTRIBUTING.md) para más información.
 
 ---
 

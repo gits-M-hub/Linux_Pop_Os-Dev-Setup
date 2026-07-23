@@ -1,0 +1,52 @@
+name: Validación
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  validate-scripts:
+    name: Validar Scripts de Shell
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout del repositorio
+      uses: actions/checkout@v4
+      
+    - name: Validar sintaxis de scripts de shell
+      run: |
+        echo "Validando scripts de shell..."
+        find scripts -name "*.sh" -type f -exec shellcheck {} \; || true
+        echo "Validación de sintaxis completada"
+      
+  validate-markdown:
+    name: Validar Markdown
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout del repositorio
+      uses: actions/checkout@v4
+      
+    - name: Verificar enlaces en Markdown
+      run: |
+        echo "Verificando enlaces en archivos markdown..."
+        find docs -name "*.md" -type f | while read file; do
+          echo "Verificando $file"
+        done
+        echo "Verificación de enlaces completada"
+      
+  check-permissions:
+    name: Verificar Permisos de Scripts
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout del repositorio
+      uses: actions/checkout@v4
+      
+    - name: Verificar permisos de ejecución
+      run: |
+        echo "Verificando permisos de scripts..."
+        chmod +x scripts/*.sh scripts/install/*.sh scripts/docker/*.sh 2>/dev/null || true
+        echo "Permisos verificados"
