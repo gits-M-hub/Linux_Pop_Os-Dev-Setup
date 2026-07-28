@@ -102,6 +102,7 @@ Bienvenido a la documentación del entorno de desarrollo Linux Pop!\_OS.
 
 ### Guías de Instalación
 
+- [`setup/multi-distro-support.md`](setup/multi-distro-support.md) - Soporte multi-distribución (Arch, Fedora, Debian)
 - [`setup/install-git.md`](setup/install-git.md) - Guía de instalación de Git
   - Instalación desde repositorio o fuente
   - Configuración inicial

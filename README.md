@@ -1,6 +1,6 @@
-# 🚀 Linux Pop!\_OS Dev Setup
+# 🚀 Linux Multi-Distro Dev Setup
 
-Un entorno de desarrollo reproducible, organizado y documentado para **Pop!\_OS**, pensado para desarrollo de software moderno con énfasis en:
+Un entorno de desarrollo reproducible, organizado y documentado para **múltiples distribuciones de Linux**, pensado para desarrollo de software moderno con énfasis en:
 
 - ☕ Java
 - 🟣 Kotlin
@@ -33,7 +33,15 @@ Este repositorio tiene como finalidad:
 - **Versionar** todos los cambios importantes
 - **Automatizar la instalación** del entorno completo
 
-Este proyecto está diseñado para ser un **setup reproducible** que permite reinstalar el entorno de desarrollo en Pop!\_OS rápidamente cuando sea necesario.
+Este proyecto está diseñado para ser un **setup reproducible** que permite reinstalar el entorno de desarrollo en múltiples distribuciones de Linux rápidamente cuando sea necesario.
+
+## 🌍 Distribuciones Soportadas
+
+- ✅ **Debian/Ubuntu:** Ubuntu, Pop!\_OS, Linux Mint, Debian
+- ✅ **Arch Linux:** Arch Linux, Manjaro
+- ✅ **Fedora:** Fedora, RHEL, CentOS
+
+El script detecta automáticamente tu distribución y ejecuta la instalación correspondiente.
 
 ## 🚀 Instalación Rápida
 
