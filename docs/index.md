@@ -160,6 +160,17 @@ Bienvenido a la documentación del entorno de desarrollo Linux Pop!\_OS.
 
 ---
 
+## 🩺 Diagnóstico
+
+### Arch Doctor
+
+- [`diagnostics/arch-doctor.md`](diagnostics/arch-doctor.md) - Diagnóstico completo y de solo lectura de Arch Linux
+  - Salud de pacman: huérfanos, `.pacnew`, keyring, mirrors, AUR
+  - systemd, journal, initramfs, DKMS y firmware
+  - Almacenamiento, red, seguridad y entorno de desarrollo
+
+---
+
 ## 🚧 Próximamente
 
 Documentación en desarrollo:

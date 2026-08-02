@@ -82,6 +82,7 @@ linux-dev-setup/
 │   ├── setup/        # Guías de instalación
 │   └── terminal/     # Comandos y herramientas
 ├── scripts/          # Scripts de automatización
+│   ├── diagnostics/  # Diagnóstico del sistema
 │   ├── docker/       # Scripts de Docker
 │   └── install/      # Scripts de instalación
 ├── .gitignore        # Archivos ignorados por Git
@@ -102,6 +103,7 @@ Toda la documentación se encuentra en la carpeta [`docs/`](docs/).
 **Documentación disponible:**
 
 [`docs/linux-survival-guide.md`](/docs/linux-survival-guide.md) - Guía de supervivencia en Linux
+[`docs/diagnostics/arch-doctor.md`](/docs/diagnostics/arch-doctor.md) - Diagnóstico completo de Arch Linux
 [`docs/ai/README.md`](/docs/ai/README.md) - Herramientas de Inteligencia Artificial
 [`docs/setup/installed-tools.md`](/docs/setup/installed-tools.md) - Herramientas instaladas
 [`docs/terminal/navigation.md`](/docs/terminal/navigation.md) - Navegación en terminal
@@ -177,6 +179,10 @@ Los scripts del proyecto se encuentran en [`scripts/`](/scripts/).
 
 - `scripts/doctor.sh` - Script de verificación del sistema
 - `scripts/update-system.sh` - Actualización del sistema
+
+### Diagnóstico
+
+- [`scripts/diagnostics/arch-doctor.sh`](scripts/diagnostics/arch-doctor.sh) - Diagnóstico completo y de solo lectura de Arch Linux ([documentación](/docs/diagnostics/arch-doctor.md))
 
 ---
 
