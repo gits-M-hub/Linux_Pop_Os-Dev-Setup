@@ -149,13 +149,32 @@ install_lazygit() {
     else
         print_info "Instalando LazyGit..."
         
-        LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
-        curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/download/${LAZYGIT_VERSION}/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz"
-        tar xf lazygit.tar.gz
-        sudo install lazygit /usr/local/bin
-        rm lazygit.tar.gz lazygit
-        
-        print_success "LazyGit instalado"
+        # Intentar instalar desde repositorio de Fedora primero
+        if sudo dnf list lazygit >/dev/null 2>&1; then
+            sudo dnf install -y lazygit
+            print_success "LazyGit instalado desde repositorio de Fedora"
+        else
+            print_info "LazyGit no encontrado en repositorios, instalando desde GitHub..."
+            LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
+            
+            if [ -z "$LAZYGIT_VERSION" ]; then
+                print_error "No se pudo obtener la versión de LazyGit"
+                return 1
+            fi
+            
+            curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/download/${LAZYGIT_VERSION}/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz"
+            
+            if [ ! -f lazygit.tar.gz ]; then
+                print_error "No se pudo descargar LazyGit"
+                return 1
+            fi
+            
+            tar xf lazygit.tar.gz
+            sudo install lazygit /usr/local/bin
+            rm lazygit.tar.gz lazygit
+            
+            print_success "LazyGit instalado desde GitHub"
+        fi
     fi
 }
 
@@ -169,17 +188,21 @@ install_yazi() {
         print_info "Instalando Yazi..."
         sudo dnf install -y unzip
         
-        # Instalar via cargo si está disponible, o descargar binario
-        if command -v cargo >/dev/null 2>&1; then
+        # Intentar instalar desde repositorio de Fedora primero
+        if sudo dnf list yazi >/dev/null 2>&1; then
+            sudo dnf install -y yazi
+            print_success "Yazi instalado desde repositorio de Fedora"
+        # Si no está disponible, instalar via cargo
+        elif command -v cargo >/dev/null 2>&1; then
             cargo install --locked yazi
+            print_success "Yazi instalado via cargo"
         else
             print_warning "Cargo no encontrado. Instalando Rust primero..."
             curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
             source "$HOME/.cargo/env"
             cargo install --locked yazi
+            print_success "Yazi instalado via cargo"
         fi
-        
-        print_success "Yazi instalado"
     fi
 }
 
@@ -249,16 +272,29 @@ install_docker() {
         print_info "Instalando Docker..."
         
         # Añadir repositorio de Docker
+        print_info "Añadiendo repositorio de Docker..."
         sudo dnf -y install dnf-plugins-core
         sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
         
+        print_info "Instalando paquetes de Docker..."
         sudo dnf install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
         
         # Habilitar e iniciar Docker
+        print_info "Habilitando e iniciando servicio Docker..."
         sudo systemctl enable docker
         sudo systemctl start docker
         
+        # Verificar que Docker está corriendo
+        if sudo systemctl is-active --quiet docker; then
+            print_success "Docker está corriendo correctamente"
+        else
+            print_error "Docker no se pudo iniciar correctamente"
+            print_info "Verifica con: sudo systemctl status docker"
+            return 1
+        fi
+        
         # Añadir usuario al grupo docker
+        print_info "Añadiendo usuario al grupo docker..."
         sudo usermod -aG docker $USER
         
         print_success "Docker instalado"

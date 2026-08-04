@@ -133,17 +133,24 @@ scripts/install/
 
 ## 📈 Compatibilidad del Proyecto
 
-### Arch Linux: ✅ 100% Compatible
+### Fedora: ✅ 85% Compatible (Mejorado)
 
-El proyecto ahora soporta completamente Arch Linux con scripts específicos:
+El proyecto soporta Fedora con scripts específicos y mejoras de estabilidad:
 
 - ✅ Todas las herramientas base (Zsh, Oh My Zsh, Starship, etc.)
-- ✅ LazyGit y Yazi (desde AUR)
+- ✅ LazyGit (prioriza repositorios de Fedora, fallback a GitHub)
+- ✅ Yazi (prioriza repositorios de Fedora, fallback a cargo)
 - ✅ SDKMAN!, Java, Kotlin, Gradle
-- ✅ Docker (desde repositorios oficiales)
-- ✅ VS Code (desde AUR)
+- ✅ Docker (con verificación de estado y mejor manejo de errores)
+- ✅ VS Code (desde RPM de Microsoft)
 - ✅ PostgreSQL
 - ✅ Todas las configuraciones
+
+**Mejoras de estabilidad en Fedora:**
+- Verificación de repositorios antes de descargar binarios externos
+- Manejo robusto de errores en descargas
+- Verificación de estado de servicios systemd
+- Fallback inteligente entre métodos de instalación
 
 ### Diferencias en Arch:
 
