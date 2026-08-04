@@ -40,31 +40,67 @@
 
 Si vienes de Arch Linux y quieres reutilizar su partición:
 
-**Desde Windows (antes de instalar Fedora):**
+**⚠️ ADVERTENCIA IMPORTANTE:**
 
-1. **Abrir PowerShell como Administrador**
-2. **Remover entrada de Arch del bootloader:**
-   ```powershell
-   # Ver todas las entradas del bootloader
-   bcdedit /enum all
-   
-   # Eliminar la entrada de Arch (reemplaza {ID} con el identificador real)
-   bcdedit /delete {ID-de-arch} /f
-   ```
+En muchos sistemas, Arch Linux y Windows tienen entradas con el **mismo nombre** ("Windows Boot Manager") en el bootloader, lo que hace muy peligroso eliminar la entrada equivocada. **NO uses bcdedit directamente** a menos que estés 100% seguro.
 
-3. **Limpiar el sector de arranque de la partición de Arch:**
-   ```powershell
-   diskpart
-   list disk
-   select disk X  # Reemplaza X con el número de disco
-   list partition
-   select partition Y  # Reemplaza Y con el número de partición de Arch
-   override
-   remove partition override
-   exit
-   ```
-   
-   **IMPORTANTE:** Esto solo limpia el sector de arranque, NO borra los datos. Fedora detectará esta partición como "espacio libre" durante la instalación.
+**MÉTODO SEGURO RECOMENDADO:**
+
+**Opción 1: Usar EasyBCG (Windows - GUI - Recomendado)**
+
+1. **Descargar EasyBCG:** https://neosmart.net/EasyBCD/
+2. **Ejecutar como Administrador**
+3. **En la pestaña "Edit Boot Entries":**
+   - Identifica la entrada de Arch Linux (usualmente dice "Arch Linux" o tiene un icono de Linux)
+   - Selecciona la entrada de Arch
+   - Click en "Delete"
+4. **En la pestaña "BCD Deployment":**
+   - Asegúrate que "Install the Windows Vista/7 bootloader to the MBR" esté seleccionado
+   - Click en "Write MBR"
+
+**Opción 2: Usar bcdedit con identificación por PATH (Solo si estás seguro)**
+
+Si prefieres usar línea de comandos, identifica la entrada de Arch por su PATH:
+
+```powershell
+# Ver todas las entradas con sus paths
+bcdedit /enum all | findstr /i "path"
+```
+
+La entrada de Arch tendrá un path como: `\EFI\Linux\arch-linux.efi`
+La entrada de Windows tendrá: `\EFI\Microsoft\Boot\bootmgfw.efi`
+
+```powershell
+# ELIMINA SOLO la entrada que tenga path \EFI\Linux\arch-linux.efi
+# Reemplaza {ID} con el identificador que tenga ese path específico
+bcdedit /delete {bootmgr} /f
+```
+
+**⚠️ Si eliminas la entrada equivocada, podrías perder el acceso a Windows.**
+
+**Opción 3: Dejar el bootloader de Arch intacto (Más seguro)**
+
+La opción más segura es **no tocar el bootloader de Arch**. Durante la instalación de Fedora:
+
+1. Fedora detectará el bootloader existente
+2. Fedora añadirá su propia entrada al bootloader
+3. Podrás elegir entre Arch y Fedora en el arranque
+4. Después de confirmar que Fedora funciona, puedes formatear la partición de Arch desde el instalador de Fedora
+
+**Limpiar la partición de Arch (después de remover el bootloader):**
+
+```powershell
+diskpart
+list disk
+select disk X  # Reemplaza X con el número de disco donde está Arch
+list partition
+select partition Y  # Reemplaza Y con el número de partición de Arch
+override
+remove partition override
+exit
+```
+
+**IMPORTANTE:** Esto solo limpia el sector de arranque, NO borra los datos de la partición. Fedora detectará esta partición como "espacio libre" durante la instalación.
 
 ---
 
