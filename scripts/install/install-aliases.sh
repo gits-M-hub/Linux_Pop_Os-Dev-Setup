@@ -17,7 +17,14 @@ NC='\033[0m' # No Color
 PROJECT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
 ALIASES_DIR="$PROJECT_DIR/configs/aliases"
 
-echo -e "${BLUE}🔧 Instalando alias de linux-dev-setup...${NC}"
+# Detectar si es Fedora
+USE_FEDORA_TOOLS=false
+if [[ "$1" == "--fedora" ]]; then
+    USE_FEDORA_TOOLS=true
+    echo -e "${BLUE}🔧 Instalando alias de linux-dev-setup (Fedora)...${NC}"
+else
+    echo -e "${BLUE}🔧 Instalando alias de linux-dev-setup...${NC}"
+fi
 echo ""
 
 # Verificar que el directorio de alias existe
@@ -68,7 +75,18 @@ echo "Añadiendo archivos de alias..."
 add_line_if_not_exists "source $ALIASES_DIR/git.zsh" "$ZSHRC"
 add_line_if_not_exists "source $ALIASES_DIR/docker.zsh" "$ZSHRC"
 add_line_if_not_exists "source $ALIASES_DIR/postgres.zsh" "$ZSHRC"
-add_line_if_not_exists "source $ALIASES_DIR/tools.zsh" "$ZSHRC"
+
+# Usar tools.zsh o tools-fedora.zsh según la distribución
+if [ "$USE_FEDORA_TOOLS" = true ]; then
+    if [ -f "$ALIASES_DIR/tools-fedora.zsh" ]; then
+        add_line_if_not_exists "source $ALIASES_DIR/tools-fedora.zsh" "$ZSHRC"
+    else
+        echo -e "${YELLOW}⚠${NC} tools-fedora.zsh no encontrado, usando tools.zsh"
+        add_line_if_not_exists "source $ALIASES_DIR/tools.zsh" "$ZSHRC"
+    fi
+else
+    add_line_if_not_exists "source $ALIASES_DIR/tools.zsh" "$ZSHRC"
+fi
 
 echo ""
 echo -e "${GREEN}✅ Instalación completada${NC}"
@@ -85,4 +103,8 @@ echo "Alias instalados:"
 echo -e "${GREEN}  • Git${NC} (gs, ga, gc, gp, gb, gco, gl, gd)"
 echo -e "${GREEN}  • Docker${NC} (d, dc, dps, di, dvol, dprune, dex, dsh)"
 echo -e "${GREEN}  • PostgreSQL${NC} (pg-status, pg-start, pg-stop, pg-restart)"
-echo -e "${GREEN}  • Tools${NC} (lg, yz, cat)"
+if [ "$USE_FEDORA_TOOLS" = true ]; then
+    echo -e "${GREEN}  • Tools${NC} (lg, yz, cat - usando 'bat' nativo de Fedora)"
+else
+    echo -e "${GREEN}  • Tools${NC} (lg, yz, cat - usando 'batcat' de Debian/Ubuntu)"
+fi

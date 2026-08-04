@@ -189,8 +189,8 @@ print_success "Git configurado"
 # Instalar alias
 print_header "Instalando Alias"
 if [ -f "$HOME/Projects/linux-dev-setup/scripts/install/install-aliases.sh" ]; then
-    print_info "Ejecutando script de instalación de alias..."
-    "$HOME/Projects/linux-dev-setup/scripts/install/install-aliases.sh"
+    print_info "Ejecutando script de instalación de alias (Fedora)..."
+    "$HOME/Projects/linux-dev-setup/scripts/install/install-aliases.sh" --fedora
     print_success "Alias instalados"
 else
     print_warning "Script de instalación de alias no encontrado en $HOME/Projects/linux-dev-setup"

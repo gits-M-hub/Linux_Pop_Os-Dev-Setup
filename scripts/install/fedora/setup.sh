@@ -477,9 +477,9 @@ configure_zsh() {
         print_success "Zsh ya es el shell por defecto"
     fi
     
-    # Instalar alias
-    print_info "Instalando alias..."
-    "$HOME/Projects/linux-dev-setup/scripts/install/install-aliases.sh"
+    # Instalar alias (versión Fedora)
+    print_info "Instalando alias para Fedora..."
+    "$HOME/Projects/linux-dev-setup/scripts/install/install-aliases.sh" --fedora
 }
 
 # Configurar Starship
