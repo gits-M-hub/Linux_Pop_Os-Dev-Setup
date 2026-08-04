@@ -133,9 +133,9 @@ scripts/install/
 
 ## 📈 Compatibilidad del Proyecto
 
-### Fedora: ✅ 85% Compatible (Mejorado)
+### Fedora: ✅ 92% Compatible (Edición Especial Mejorada)
 
-El proyecto soporta Fedora con scripts específicos y mejoras de estabilidad:
+El proyecto soporta Fedora con scripts específicos y mejoras avanzadas de estabilidad:
 
 - ✅ Todas las herramientas base (Zsh, Oh My Zsh, Starship, etc.)
 - ✅ LazyGit (prioriza repositorios de Fedora, fallback a GitHub)
@@ -143,14 +143,22 @@ El proyecto soporta Fedora con scripts específicos y mejoras de estabilidad:
 - ✅ SDKMAN!, Java, Kotlin, Gradle
 - ✅ Docker (con verificación de estado y mejor manejo de errores)
 - ✅ VS Code (desde RPM de Microsoft)
-- ✅ PostgreSQL
+- ✅ PostgreSQL (con verificación de estado y manejo de errores)
 - ✅ Todas las configuraciones
 
-**Mejoras de estabilidad en Fedora:**
-- Verificación de repositorios antes de descargar binarios externos
-- Manejo robusto de errores en descargas
-- Verificación de estado de servicios systemd
-- Fallback inteligente entre métodos de instalación
+**Mejoras de estabilidad en Fedora (Edición Especial):**
+- **Detección de versión:** Verifica versión de Fedora (mínimo 35 soportado)
+- **Verificación de dependencias:** Valida e instala dependencias faltantes automáticamente
+- **Verificación de salud del sistema:**
+  - Espacio en disco (mínimo 10GB recomendado)
+  - Memoria RAM (mínimo 4GB recomendado)
+  - Conexión a internet
+  - Permisos sudo
+- **Mecanismo de rollback:** Desinstala paquetes y detiene servicios si falla la instalación
+- **Verificación de servicios systemd:** Confirma que Docker y PostgreSQL están corriendo
+- **Manejo robusto de errores en descargas:** Verifica archivos descargados antes de instalar
+- **Fallback inteligente:** Prioriza repositorios de Fedora antes de usar métodos externos
+- **Registro de cambios:** Rastrea paquetes y servicios instalados para rollback
 
 ### Diferencias en Arch:
 

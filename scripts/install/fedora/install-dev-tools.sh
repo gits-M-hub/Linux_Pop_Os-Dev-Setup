@@ -105,10 +105,21 @@ else
     sudo dnf -y install dnf-plugins-core
     sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
     
+    print_info "Instalando paquetes de Docker..."
     sudo dnf install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
     
+    print_info "Habilitando e iniciando servicio Docker..."
     sudo systemctl enable docker
     sudo systemctl start docker
+    
+    # Verificar que Docker está corriendo
+    if sudo systemctl is-active --quiet docker; then
+        print_success "Docker está corriendo correctamente"
+    else
+        print_error "Docker no se pudo iniciar correctamente"
+        print_info "Verifica con: sudo systemctl status docker"
+        exit 1
+    fi
     
     sudo usermod -aG docker $USER
     
@@ -139,10 +150,21 @@ else
     print_info "Instalando PostgreSQL..."
     sudo dnf install -y postgresql postgresql-server
     
+    print_info "Inicializando base de datos..."
     sudo /usr/bin/postgresql-setup --initdb
     
+    print_info "Habilitando e iniciando servicio PostgreSQL..."
     sudo systemctl enable postgresql
     sudo systemctl start postgresql
+    
+    # Verificar que PostgreSQL está corriendo
+    if sudo systemctl is-active --quiet postgresql; then
+        print_success "PostgreSQL está corriendo correctamente"
+    else
+        print_error "PostgreSQL no se pudo iniciar correctamente"
+        print_info "Verifica con: sudo systemctl status postgresql"
+        exit 1
+    fi
     
     print_success "PostgreSQL instalado"
 fi

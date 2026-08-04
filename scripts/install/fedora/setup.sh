@@ -56,6 +56,10 @@ check_os() {
     fi
 
     source /etc/os-release
+    
+    # Detectar versión de Fedora
+    FEDORA_VERSION=${VERSION_ID:-0}
+    
     if [[ "$ID" != "fedora" && "$ID" != "rhel" && "$ID" != "centos" ]]; then
         print_warning "Este script está diseñado para Fedora/RHEL/CentOS. Puede funcionar en otros sistemas, pero no está garantizado."
         read -p "¿Continuar? (y/n) " -n 1 -r
@@ -63,6 +67,97 @@ check_os() {
         if [[ ! $REPLY =~ ^[Yy]$ ]]; then
             exit 1
         fi
+    fi
+    
+    if [[ "$ID" == "fedora" ]]; then
+        print_info "Fedora versión $FEDORA_VERSION detectada"
+        
+        # Verificar versión mínima soportada
+        if [ "$FEDORA_VERSION" -lt 35 ]; then
+            print_warning "Fedora $FEDORA_VERSION no está oficialmente soportado. Se recomienda Fedora 35 o superior."
+            read -p "¿Continuar de todos modos? (y/n) " -n 1 -r
+            echo
+            if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+                exit 1
+            fi
+        fi
+    fi
+}
+
+# Verificar dependencias del sistema
+check_dependencies() {
+    print_header "Verificando dependencias del sistema"
+    
+    local missing_deps=()
+    local required_deps=("curl" "wget" "git" "unzip" "gcc" "make")
+    
+    for dep in "${required_deps[@]}"; do
+        if ! command -v "$dep" >/dev/null 2>&1; then
+            missing_deps+=("$dep")
+        fi
+    done
+    
+    if [ ${#missing_deps[@]} -gt 0 ]; then
+        print_warning "Faltan dependencias: ${missing_deps[*]}"
+        print_info "Instalando dependencias faltantes..."
+        sudo dnf install -y "${missing_deps[@]}"
+        
+        # Verificar nuevamente
+        local still_missing=()
+        for dep in "${missing_deps[@]}"; do
+            if ! command -v "$dep" >/dev/null 2>&1; then
+                still_missing+=("$dep")
+            fi
+        done
+        
+        if [ ${#still_missing[@]} -gt 0 ]; then
+            print_error "No se pudieron instalar: ${still_missing[*]}"
+            exit 1
+        fi
+    fi
+    
+    print_success "Todas las dependencias están instaladas"
+}
+
+# Verificar salud del sistema
+check_system_health() {
+    print_header "Verificando salud del sistema"
+    
+    # Verificar espacio en disco
+    local available_space=$(df -BG / | tail -1 | awk '{print $4}' | tr -d 'G')
+    if [ "$available_space" -lt 10 ]; then
+        print_warning "Espacio en disco bajo: ${available_space}GB disponible (mínimo 10GB recomendado)"
+        read -p "¿Continuar? (y/n) " -n 1 -r
+        echo
+        if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+            exit 1
+        fi
+    else
+        print_success "Espacio en disco suficiente: ${available_space}GB disponible"
+    fi
+    
+    # Verificar memoria RAM
+    local total_mem=$(free -g | awk '/^Mem:/{print $2}')
+    if [ "$total_mem" -lt 4 ]; then
+        print_warning "Memoria RAM baja: ${total_mem}GB (mínimo 4GB recomendado)"
+    else
+        print_success "Memoria RAM suficiente: ${total_mem}GB"
+    fi
+    
+    # Verificar conexión a internet
+    if ! ping -c 1 -W 2 8.8.8.8 >/dev/null 2>&1; then
+        print_error "No hay conexión a internet"
+        exit 1
+    else
+        print_success "Conexión a internet verificada"
+    fi
+    
+    # Verificar permisos sudo
+    if ! sudo -n true 2>/dev/null; then
+        print_warning "Se requieren permisos sudo"
+        sudo -v || exit 1
+    else
+        print_success "Permisos sudo verificados"
     fi
 }
 
@@ -73,8 +168,8 @@ update_system() {
     print_info "Actualizando repositorios..."
     sudo dnf update -y
     
-    print_info "Instalando dependencias básicas..."
-    sudo dnf install -y curl wget git unzip gcc-c++ make
+    print_info "Instalando dependencias básicas adicionales..."
+    sudo dnf install -y gcc-c++ make
     
     print_success "Sistema actualizado"
 }
@@ -279,10 +374,20 @@ install_docker() {
         print_info "Instalando paquetes de Docker..."
         sudo dnf install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
         
+        # Registrar paquetes para rollback
+        register_package "docker-ce"
+        register_package "docker-ce-cli"
+        register_package "containerd.io"
+        register_package "docker-buildx-plugin"
+        register_package "docker-compose-plugin"
+        
         # Habilitar e iniciar Docker
         print_info "Habilitando e iniciando servicio Docker..."
         sudo systemctl enable docker
         sudo systemctl start docker
+        
+        # Registrar servicio para rollback
+        register_service "docker"
         
         # Verificar que Docker está corriendo
         if sudo systemctl is-active --quiet docker; then
@@ -330,12 +435,30 @@ install_postgresql() {
         print_info "Instalando PostgreSQL..."
         sudo dnf install -y postgresql postgresql-server
         
+        # Registrar paquetes para rollback
+        register_package "postgresql"
+        register_package "postgresql-server"
+        
         # Inicializar base de datos
+        print_info "Inicializando base de datos..."
         sudo /usr/bin/postgresql-setup --initdb
         
         # Habilitar e iniciar PostgreSQL
+        print_info "Habilitando e iniciando servicio PostgreSQL..."
         sudo systemctl enable postgresql
         sudo systemctl start postgresql
+        
+        # Registrar servicio para rollback
+        register_service "postgresql"
+        
+        # Verificar que PostgreSQL está corriendo
+        if sudo systemctl is-active --quiet postgresql; then
+            print_success "PostgreSQL está corriendo correctamente"
+        else
+            print_error "PostgreSQL no se pudo iniciar correctamente"
+            print_info "Verifica con: sudo systemctl status postgresql"
+            return 1
+        fi
         
         print_success "PostgreSQL instalado"
     fi
@@ -403,12 +526,49 @@ configure_git() {
     print_success "Git configurado"
 }
 
+# Variables para rollback
+declare -a INSTALLED_PACKAGES=()
+declare -a CREATED_SERVICES=()
+
+# Registrar paquete instalado para rollback
+register_package() {
+    INSTALLED_PACKAGES+=("$1")
+}
+
+# Registrar servicio creado para rollback
+register_service() {
+    CREATED_SERVICES+=("$1")
+}
+
+# Rollback en caso de error
+rollback() {
+    print_header "Ejecutando Rollback"
+    
+    print_warning "Desinstalando paquetes instalados..."
+    for pkg in "${INSTALLED_PACKAGES[@]}"; do
+        print_info "Desinstalando $pkg..."
+        sudo dnf remove -y "$pkg" 2>/dev/null || true
+    done
+    
+    print_warning "Deteniendo y deshabilitando servicios..."
+    for svc in "${CREATED_SERVICES[@]}"; do
+        print_info "Deteniendo $svc..."
+        sudo systemctl stop "$svc" 2>/dev/null || true
+        sudo systemctl disable "$svc" 2>/dev/null || true
+    done
+    
+    print_error "Instalación fallida. Rollback completado."
+    exit 1
+}
+
 # Función principal
 main() {
     print_header "Linux Dev Setup - Instalación (Fedora)"
     
     check_sudo
     check_os
+    check_system_health
+    check_dependencies
     
     print_info "Este script instalará:"
     echo "  - Herramientas base (Zsh, Tree, Bat, Btop, etc.)"
@@ -430,22 +590,26 @@ main() {
     
     echo ""
     
-    # Ejecutar instalación
-    update_system
-    install_base_tools
-    install_oh_my_zsh
-    install_starship
-    install_lazygit
-    install_yazi
-    install_sdkman
-    install_java
-    install_kotlin
-    install_docker
-    install_vscode
-    install_postgresql
-    configure_zsh
-    configure_starship
-    configure_git
+    # Ejecutar instalación con rollback en caso de error
+    trap rollback ERR
+    
+    update_system || true
+    install_base_tools || true
+    install_oh_my_zsh || true
+    install_starship || true
+    install_lazygit || true
+    install_yazi || true
+    install_sdkman || true
+    install_java || true
+    install_kotlin || true
+    install_docker || true
+    install_vscode || true
+    install_postgresql || true
+    configure_zsh || true
+    configure_starship || true
+    configure_git || true
+    
+    trap - ERR  # Desactivar rollback después de instalación exitosa
     
     print_header "Instalación Completada"
     
